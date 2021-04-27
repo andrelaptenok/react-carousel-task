@@ -1,0 +1,23 @@
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: #000;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dot:last-child {
+    margin-right: 0;
+}
+
+.selectDot {
+    background-color: #95AB63;
+}
+
+.dot:hover {
+    transition: all 0.2s;
+    background-color: #95AB63;
+}

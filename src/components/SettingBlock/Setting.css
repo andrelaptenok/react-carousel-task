@@ -1,0 +1,31 @@
+.settings {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    margin: 10px 0;
+    width: 100%;
+}
+
+label {
+    color: #fff;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin-right: 10px;
+}
+
+.select {
+    width: 50px;
+    padding: 3px;
+    text-align: center;
+    font-size: 16px;
+    border: 1px solid #95AB63;
+    border-radius: 5px;
+}
+
+.checkbox {
+    width: 15px;
+    height: 15px;
+    margin-right: 40px;
+    cursor: pointer;
+}
