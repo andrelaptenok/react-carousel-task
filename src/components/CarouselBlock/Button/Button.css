@@ -22,7 +22,7 @@
 }
 
 .rightSlide {
-    right: 20px;
+    right: 10px;
     transform: translate3d(0, -50%, 0) rotate(45deg);
 }
 

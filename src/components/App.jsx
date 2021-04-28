@@ -7,14 +7,16 @@ import { Setting } from './SettingBlock/Setting.jsx';
 let data = [
   <div
     style={{
+      height: '100%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       padding: '20px',
+      margin: '10px'
     }}>
     <img
-      style={{ width: '50%', height: '50%', objectFit: 'cover' }}
+      style={{ width: '50%', objectFit: 'cover' }}
       src="https://i.ytimg.com/vi/GAHHRlD-UjA/maxresdefault.jpg"
     />
     <p style={{ padding: '10px' }}>
@@ -28,6 +30,7 @@ let data = [
   </div>,
   <div
     style={{
+      height: '100%',
       display: 'flex',
       flexDirection: 'column',
       justifyContent: 'center',
@@ -35,10 +38,10 @@ let data = [
       padding: '20px',
     }}>
     <img
-      style={{ width: '50%', height: '50%', objectFit: 'cover' }}
+      style={{ width: '50%', objectFit: 'cover' }}
       src="https://mport.ua/i/73/66/29/736629/4ad6ac8e0ba7ccf7c00da9a77ba5b0fb-quality_70Xresize_crop_1Xallow_enlarge_0Xw_1200Xh_643.jpg"
     />
-    <p style={{ padding: '5%' }}>
+    <p style={{ padding: '10px' }}>
       The word "silicon" in the name originally referred to the large number of innovators and
       manufacturers in the region specializing in silicon-based MOS transistors and integrated
       circuit chips. The area is now home to many of the world's largest high-tech corporations,
@@ -48,7 +51,7 @@ let data = [
   </div>,
   <img
     style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-    src="https://hackernoon.com/hn-images/1*HSisLuifMO6KbLfPOKtLow.jpeg"
+    src="https://i.artfile.ru/1920x1080_858210_[www.ArtFile.ru].jpg"
   />,
   <div style={{ padding: '5%' }}>
     <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</h1>
