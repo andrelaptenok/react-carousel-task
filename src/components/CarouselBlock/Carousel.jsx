@@ -1,21 +1,21 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 import classes from "./Carousel.css";
-import { NavigationDots } from "./NavigationDots/NavigationDots.jsx";
-import { Button } from "./Button/Button.jsx";
+import {NavigationDots} from "./NavigationDots/NavigationDots.jsx";
+import {Button} from "./Button/Button.jsx";
 
 export const Carousel = (props) => {
   const slideTrack = useRef();
   let [mainIndex, setMainIndex] = useState(0);
   const [startPosition, setStartPosition] = useState(0);
   const [trackPosition, setTrackPosition] = useState(0);
-  const [slidesEnd, setslidesEnd] = useState({ prev: true, next: false });
+  const [slidesEnd, setslidesEnd] = useState({prev: true, next: false});
   const [isMouseDown, setIsMouseDown] = useState(false);
 
-  useEffect(()=>{
-    if(props.slidesOnScreen == slides.length){
-      setslidesEnd({ prev: true, next: true });
+  useEffect(() => {
+    if (props.slidesOnScreen === slides.length) {
+      setslidesEnd({prev: true, next: true});
     }
-  },[props.slidesOnScreen,props.infinity])
+  }, [props.slidesOnScreen, props.infinity])
 
   const slides = props.slides.map((e, i) => (
     <div key={i} className={`${classes.slide} `}>
@@ -27,10 +27,10 @@ export const Carousel = (props) => {
     if (!props.infinity) {
       if (mainIndex < slides.length - props.slidesOnScreen) {
         moveTo(++mainIndex);
-        mainIndex == 0 ? setslidesEnd({ prev:true , next: false }):setslidesEnd({ prev:false , next: false })
-      } 
-       if (mainIndex == slides.length - props.slidesOnScreen) {
-        setslidesEnd({ prev: false, next: true });
+        mainIndex === 0 ? setslidesEnd({prev: true, next: false}) : setslidesEnd({prev: false, next: false})
+      }
+      if (mainIndex === slides.length - props.slidesOnScreen) {
+        setslidesEnd({prev: false, next: true});
       }
     } else {
       moveTo(++mainIndex);
@@ -46,10 +46,10 @@ export const Carousel = (props) => {
     if (!props.infinity) {
       if (mainIndex > 0) {
         moveTo(--mainIndex);
-        setslidesEnd({prev: false , next: false });
+        setslidesEnd({prev: false, next: false});
       }
-      if (mainIndex == 0) {
-        setslidesEnd({ next: false , prev: true });
+      if (mainIndex === 0) {
+        setslidesEnd({next: false, prev: true});
       }
     } else {
       moveTo(--mainIndex);
@@ -92,8 +92,8 @@ export const Carousel = (props) => {
       moveX = event.touches[0].pageX;
       setPositionAfterMove(moveX);
     } else if (isMouseDown) {
-            moveX = event.pageX;
-            setPositionAfterMove(moveX);
+      moveX = event.pageX;
+      setPositionAfterMove(moveX);
     }
   };
 
@@ -117,12 +117,12 @@ export const Carousel = (props) => {
     if (dif <= 70) {
       return;
     } else if (startPosition < endX) {
-      if (mainIndex == 0 && !props.infinity) {
+      if (mainIndex === 0 && !props.infinity) {
         return;
       }
       leftSlide();
     } else if (startPosition > endX) {
-      if (mainIndex == props.slides.length - 1 && !props.infinity) {
+      if (mainIndex === props.slides.length - 1 && !props.infinity) {
         return;
       }
       rightSlide();
@@ -145,7 +145,7 @@ export const Carousel = (props) => {
           onMouseDown={(event) => startHandler(event)}
           onMouseMove={(event) => moveHandler(event)}
           onMouseUp={(event) => endHandler(event)}
-          onMouseLeave={(event)=>isMouseDown? endHandler(event):null}
+          onMouseLeave={(event) => isMouseDown ? endHandler(event) : null}
           style={{
             width: `${(100 * slides.length) / props.slidesOnScreen}%`,
           }}
@@ -164,7 +164,7 @@ export const Carousel = (props) => {
         setTrackPosition={setTrackPosition}
         infinity={props.infinity}
       />
-      <Button infinity={props.infinity} end={slidesEnd} leftSlide={leftSlide} rightSlide={rightSlide} />
+      <Button infinity={props.infinity} end={slidesEnd} leftSlide={leftSlide} rightSlide={rightSlide}/>
     </div>
   );
 };

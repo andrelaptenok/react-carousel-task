@@ -2,7 +2,7 @@ import React from 'react';
 import classes from './Setting.css';
 
 export const Setting = (props) => {
-  const { maxScreen, updateInfinity, updateslidesOnScreen, slidesOnScreen } = props;
+  const {maxScreen, updateInfinity, updateSlidesOnScreen, slidesOnScreen} = props;
 
   return (
     <div className={classes.settings}>
@@ -23,7 +23,7 @@ export const Setting = (props) => {
         value={slidesOnScreen}
         min={1}
         max={maxScreen}
-        onChange={(e) => updateslidesOnScreen(e.target.value)}
+        onChange={(e) => updateSlidesOnScreen(e.target.value)}
       />
     </div>
   );
