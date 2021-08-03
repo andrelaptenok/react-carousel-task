@@ -66,9 +66,6 @@ export const App = () => {
   const [infinity, setInfinity] = useState(false);
   const [slidesOnScreen, setSlidesOnScreen] = useState(1);
 
-  console.log("infinity", infinity)
-  console.log("slidesOnScreen", slidesOnScreen)
-
   return (
     <div className={classes.wrapper}>
       <Setting
