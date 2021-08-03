@@ -54,7 +54,7 @@ export const Carousel = (props) => {
     } else {
       moveTo(--mainIndex);
       if (mainIndex < 0) {
-        let positionToMove = getPositionToMove(slides.length - props.slidesOnScreen);
+        const positionToMove = getPositionToMove(slides.length - props.slidesOnScreen);
         slideTrack.current.style.transform = `translateX(-${positionToMove}px)`;
         setMainIndex(slides.length - props.slidesOnScreen);
         setTrackPosition(positionToMove);
@@ -65,7 +65,7 @@ export const Carousel = (props) => {
 
   const moveTo = (mainIndex) => {
     setMainIndex(mainIndex);
-    let positionToMove = getPositionToMove(mainIndex);
+    const positionToMove = getPositionToMove(mainIndex);
     setTrackPosition(positionToMove);
     slideTrack.current.style.transform = `translateX(-${positionToMove}px)`;
   };
@@ -98,7 +98,7 @@ export const Carousel = (props) => {
   };
 
   const setPositionAfterMove = (moveX) => {
-    let position = `translateX(${moveX - startPosition - trackPosition}px)`;
+    const position = `translateX(${moveX - startPosition - trackPosition}px)`;
     setPositon(position, "none");
   };
 
@@ -110,8 +110,8 @@ export const Carousel = (props) => {
       endX = event.pageX;
       setIsMouseDown(false);
     }
-    let dif = Math.abs(startPosition - endX);
-    let position = `translateX(-${trackPosition}px)`;
+    const dif = Math.abs(startPosition - endX);
+    const position = `translateX(-${trackPosition}px)`;
     setPositon(position, "");
 
     if (dif <= 70) {
